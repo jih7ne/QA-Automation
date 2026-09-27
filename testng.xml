@@ -8,6 +8,8 @@
             <class name="tests.LoginTests"/>
             <class name="tests.RegisterTests"/>
             <class name="tests.ContactUsTests"/>
+            <class name="tests.SearchProductTests"/>
+<class name="tests.SubscriptionTests"/>
         </classes>
     </test>
 </suite>

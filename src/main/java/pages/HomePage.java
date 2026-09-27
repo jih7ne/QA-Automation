@@ -1,5 +1,5 @@
 package pages;
-
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -44,5 +44,25 @@ public class HomePage extends BasePage {
     public ContactUsPage goToContactUsPage() {
         click(contactUsLink);
         return new ContactUsPage(driver);
+    }
+    private By subscribeEmailField = By.id("susbscribe_email");
+    private By subscribeButton = By.id("subscribe");
+    private By subscribeSuccessMessage = By.cssSelector(".alert-success");
+
+    public void subscribeToNewsletter(String email) {
+        WebElement emailField = wait.until(d -> d.findElement(subscribeEmailField));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", emailField);
+        type(subscribeEmailField, email);
+        click(subscribeButton);
+    }
+
+    public boolean isSubscribeSuccessVisible() {
+        return isDisplayed(subscribeSuccessMessage);
+    }
+    private By productsLink = By.cssSelector("a[href='/products']");
+
+    public ProductsPage goToProductsPage() {
+        click(productsLink);
+        return new ProductsPage(driver);
     }
 }
