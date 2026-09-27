@@ -5,10 +5,21 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Description;
+
+@Epic("Automation Exercise - Core Flows")
+@Feature("Authentication")
 public class LoginTests extends BaseTest {
 
-    // Test Case 2: Login with correct email and password
     @Test
+    @Story("Login")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Verifies a registered user can log in with correct credentials")
     public void testValidLogin() {
         HomePage homePage = new HomePage(driver);
         LoginPage loginPage = homePage.goToLoginPage();
@@ -19,8 +30,10 @@ public class LoginTests extends BaseTest {
                 "Expected to see 'Logged in as' after valid login, but it wasn't shown.");
     }
 
-    // Test Case 3: Login with incorrect email and password
     @Test
+    @Story("Login")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Verifies an appropriate error is shown for invalid login credentials")
     public void testInvalidLogin() {
         HomePage homePage = new HomePage(driver);
         LoginPage loginPage = homePage.goToLoginPage();

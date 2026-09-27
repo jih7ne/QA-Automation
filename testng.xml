@@ -1,0 +1,12 @@
+<suite name="AutomationExerciseSuite">
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+    <test name="AuthenticationTests">
+        <classes>
+            <class name="tests.LoginTests"/>
+            <class name="tests.RegisterTests"/>
+        </classes>
+    </test>
+</suite>

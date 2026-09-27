@@ -5,11 +5,22 @@ import org.testng.annotations.Test;
 import pages.AccountInfoPage;
 import pages.HomePage;
 import pages.SignupPage;
+import tests.BaseTest;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Description;
 
+@Epic("Automation Exercise - Core Flows")
+@Feature("Authentication")
 public class RegisterTests extends BaseTest {
 
-    // Test Case 1: Register User
     @Test
+    @Story("Registration")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Verifies a new user can register, gets logged in automatically, and account can be deleted")
     public void testRegisterUser() {
         String uniqueEmail = "jihane.qa" + System.currentTimeMillis() + "@example.com";
 
