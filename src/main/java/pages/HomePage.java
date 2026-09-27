@@ -39,4 +39,10 @@ public class HomePage extends BasePage {
             throw new AssertionError("Expected 'ACCOUNT DELETED!' message after deletion, but it wasn't shown.");
         }
     }
+    private By contactUsLink = By.linkText("Contact us");
+
+    public ContactUsPage goToContactUsPage() {
+        click(contactUsLink);
+        return new ContactUsPage(driver);
+    }
 }
