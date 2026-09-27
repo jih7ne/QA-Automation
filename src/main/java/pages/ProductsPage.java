@@ -34,4 +34,16 @@ public class ProductsPage extends BasePage {
         click(productsLink);
         return new ProductsPage(driver);
     }
+    private By addToCartButtons = By.cssSelector(".productinfo .add-to-cart");
+    private By viewCartLinkInModal = By.xpath("//u[text()='View Cart']");
+
+    public void addFirstProductToCart() {
+        List<WebElement> buttons = driver.findElements(addToCartButtons);
+        buttons.get(0).click();
+    }
+
+    public CartPage viewCartFromModal() {
+        click(viewCartLinkInModal);
+        return new CartPage(driver);
+    }
 }
