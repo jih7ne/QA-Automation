@@ -3,4 +3,5 @@ test-output/
 .settings/
 .classpath
 .project/n.allure//nlogs/
-.allure//nlogs/
+.allure/
+logs/
