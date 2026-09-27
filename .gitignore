@@ -2,4 +2,4 @@ target/
 test-output/
 .settings/
 .classpath
-.project
+.project/n.allure//nlogs/
