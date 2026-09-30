@@ -36,4 +36,13 @@ export class BasePage {
             // No consent dialog appeared — safe to ignore
         }
     }
+
+    async safeClick(locator: Locator) {
+        await locator.scrollIntoViewIfNeeded();
+        try {
+            await locator.click({ timeout: 10000 });
+        } catch {
+            await locator.click({ force: true });
+        }
+    }
 }
